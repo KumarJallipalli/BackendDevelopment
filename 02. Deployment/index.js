@@ -1,6 +1,9 @@
 // importing the express module/library using require method
 const express = require('express');
 
+// Importing dotenv
+require('dotenv').config()
+
 // express() →  creates an Express Application & returns an Object
 const app = express();
 
@@ -14,6 +17,6 @@ app.get('/', (req, res) => {
 });
 
 // app.listen() → listens to all the incoming connections/requests on specified port 
-app.listen(port, () => {
+app.listen(process.env.port, () => {
   console.log(`Example app listening on port ${port}`);
 });
